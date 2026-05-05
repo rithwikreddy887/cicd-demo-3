@@ -14,8 +14,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Show files
-        run: ls -la
+      - name: Setup Python
+        run: |
+          sudo apt update
+          sudo apt install -y python3
 
       - name: Run app
         run: python3 app.py
